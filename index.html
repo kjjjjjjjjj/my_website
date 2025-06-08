@@ -6,6 +6,7 @@
 </head>
 <body>
     <h1>个人信息展示</h1>
+    <div>啊撸爱啊撸</div>
     <div id="info">正在加载...</div>
 
     <script>
@@ -13,8 +14,7 @@
             .then(response => response.json())
             .then(data => {
                 document.getElementById('info').innerHTML = 
-                    // `姓名：${data.name} <br> 性别：${data.sex} <br> 年龄：${data.age}`;
-                    `啊撸爱啊撸`;
+                    `姓名：${data.name} <br> 性别：${data.sex} <br> 年龄：${data.age}`;
             })
             .catch(error => {
                 document.getElementById('info').textContent = '加载失败';
