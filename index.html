@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <title>展示服务器数据</title>
+</head>
+<body>
+    <h1>个人信息展示</h1>
+    <div id="info">正在加载...</div>
+
+    <script>
+        fetch('http://192.168.124.5:5000/data')  // 这里改成你的服务器地址
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('info').innerHTML = 
+                    `姓名：${data.name} <br> 性别：${data.sex} <br> 年龄：${data.age}`;
+            })
+            .catch(error => {
+                document.getElementById('info').textContent = '加载失败';
+                console.error('请求失败:', error);
+            });
+    </script>
+</body>
+</html>
